@@ -35,9 +35,13 @@ setup(name='koslab.recipe.zipapp',
       zip_safe=False,
       install_requires=[
           'setuptools',
+          'argh',
           # -*- Extra requirements: -*-
       ],
       entry_points={
-        'zc.buildout': ['default = koslab.recipe.zipapp:ZipApp']
+        'zc.buildout': ['default = koslab.recipe.zipapp.buildout_recipe:ZipApp'],
+        'console_scripts': [
+            'pyzipapp = koslab.recipe.zipapp.builder:main'
+        ]
       }
       )
