@@ -22,7 +22,7 @@ def zipdir(path, ziph):
             filename = os.path.join(root, f)
             ziph.write(filename)
 
-class PyZipper(object):
+class ZipApp(object):
     def __init__(self, buildout, name, options):
         self.name, self.options = name, options
         self.buildout = buildout

@@ -14,9 +14,9 @@ long_description = (
     open('CHANGES.txt').read()
     + '\n')
 
-setup(name='koslab.recipe.pyzipper',
+setup(name='koslab.recipe.zipapp',
       version=version,
-      description="Python zip packager",
+      description="Python ZipApp Packager",
       long_description=long_description,
       # Get more strings from
       # http://pypi.python.org/pypi?%3Aaction=list_classifiers
@@ -26,7 +26,7 @@ setup(name='koslab.recipe.pyzipper',
       keywords='',
       author='',
       author_email='',
-      url='http://github.com/kagesenshi/koslab.recipe.pyzipper/',
+      url='http://github.com/kagesenshi/koslab.recipe.zipapp/',
       license='gpl',
       packages=find_packages('src'),
       package_dir = {'': 'src'},
@@ -38,6 +38,6 @@ setup(name='koslab.recipe.pyzipper',
           # -*- Extra requirements: -*-
       ],
       entry_points={
-        'zc.buildout': ['default = koslab.recipe.pyzipper:PyZipper']
+        'zc.buildout': ['default = koslab.recipe.zipapp:ZipApp']
       }
       )
