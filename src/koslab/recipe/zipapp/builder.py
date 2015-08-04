@@ -25,7 +25,7 @@ eggs =
 [builder]
 recipe = koslab.recipe.zipapp
 omelette-part = omelette
-entry-point = %(entry_point)s
+main-function = %(main_function)s
 output-file = %(output_file)s
 
 """
@@ -45,7 +45,7 @@ eggs =
 [builder]
 recipe = koslab.recipe.zipapp
 omelette-part = omelette
-entry-point = %(entry_point)s
+main-function = %(main_function)s
 output-file = %(output_file)s
 
 """
@@ -59,12 +59,12 @@ def build(module, *args, **kwargs):
     cwd = os.getcwd()
     tempdir = tempfile.mkdtemp()
     output_file = kwargs['output'] or (module + '.pyz')
-    entry_point = kwargs['main'] or (module + ':main')
+    main_function = kwargs['main'] or (module + ':main')
     with open(os.path.join(tempdir, 'buildout.cfg'), 'w') as f:
         buildout_cfg = DEV_CFG if kwargs['development'] else BUILDOUT_CFG
         f.write(buildout_cfg % {
             'egg': module,
-            'entry_point': entry_point,
+            'main_function': main_function,
             'output_file': output_file,
         })
     with open(os.path.join(tempdir, 'bootstrap.py'), 'w') as f:

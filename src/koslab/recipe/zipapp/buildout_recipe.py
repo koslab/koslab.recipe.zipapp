@@ -26,7 +26,7 @@ class ZipApp(object):
     def __init__(self, buildout, name, options):
         self.name, self.options = name, options
         self.buildout = buildout
-        self.entry_point = options['entry-point']
+        self.main_function = options['main-function']
         self.parts_directory = os.path.join(
             buildout['buildout']['parts-directory'], self.name
         )
@@ -42,15 +42,13 @@ class ZipApp(object):
             buildout['buildout']['directory'], options['output-file']
         )
 
-        self.entry_point = options['entry-point']
-
     def install(self):
         zipf = zipfile.ZipFile(self.output_file, 'w')
         os.chdir(self.omelette_directory)
         zipdir('.', zipf)
         os.chdir(self.parts_directory)
         with open('__main__.py', 'w') as f:
-            module, method = self.entry_point.strip().split(':')
+            module, method = self.main_function.strip().split(':')
             f.write(MAINSCRIPT % {'module': module, 'method': method})
         zipf.write('__main__.py')
         zipf.close()
