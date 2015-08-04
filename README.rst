@@ -37,7 +37,7 @@ The following example packages Spotify's Luigi_ daemon as a zipapp.
 ::
 
     # Creates luigi zipapp as luigi.egg
-    pyzipapp build luigi -m luigi.cmdline:luigid -o luigi.egg
+    zipapp build luigi -m luigi.cmdline:luigid -o luigi.egg
 
     # Run luigid
     python luigi.egg

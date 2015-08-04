@@ -23,10 +23,10 @@ setup(name='koslab.recipe.zipapp',
       classifiers=[
         "Programming Language :: Python",
         ],
-      keywords='',
-      author='',
-      author_email='',
-      url='http://github.com/kagesenshi/koslab.recipe.zipapp/',
+      keywords='buildout zipapp',
+      author='Izhar Firdaus',
+      author_email='izhar@kagesenshi.org',
+      url='http://github.com/koslab/koslab.recipe.zipapp/',
       license='gpl',
       packages=find_packages('src'),
       package_dir = {'': 'src'},
@@ -41,7 +41,7 @@ setup(name='koslab.recipe.zipapp',
       entry_points={
         'zc.buildout': ['default = koslab.recipe.zipapp.buildout_recipe:ZipApp'],
         'console_scripts': [
-            'pyzipapp = koslab.recipe.zipapp.builder:main'
+            'zipapp = koslab.recipe.zipapp.builder:main'
         ]
       }
       )
