@@ -51,7 +51,7 @@ Buildout Recipe
 Configuration
 --------------
 
-This recipe depends on collective.recipe.omelette from Plone.
+This recipe depends on ``collective.recipe.omelette`` from Plone.
 
 buildout.cfg::
 
@@ -72,4 +72,4 @@ buildout.cfg::
     main-function = MyApp.main:main
     output-file = MyApp.pyz
 
-zipapp file will be created everytime buildout is run
+Output file will be created everytime buildout is run
