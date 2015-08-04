@@ -15,7 +15,7 @@ sources-dir = dev
 auto-checkout = *
 
 [sources]
-koslab.recipe.zipapp = git https://github.com/koslab/koslab.recipe.pyzipper
+koslab.recipe.zipapp = git https://github.com/koslab/koslab.recipe.zipapp
 
 [omelette]
 recipe = collective.recipe.omelette
