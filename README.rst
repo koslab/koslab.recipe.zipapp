@@ -42,4 +42,4 @@ The following example packages Spotify's Luigi_ daemon as a zipapp.
     # Run luigid
     python luigi.egg
 
-
+.. _Luigi: http://luigi.readthedocs.org/en/stable/
