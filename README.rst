@@ -43,3 +43,33 @@ The following example packages Spotify's Luigi_ daemon as a zipapp.
     python luigi.egg
 
 .. _Luigi: http://luigi.readthedocs.org/en/stable/
+
+
+Buildout Recipe
+================
+
+Configuration
+--------------
+
+This recipe depends on collective.recipe.omelette from Plone.
+
+buildout.cfg::
+
+    [buildout]
+    parts = 
+        omelette
+        zipapp
+
+    [omelette]
+    recipe = collective.recipe.omelette
+    eggs = 
+        # Eggs to be included into the zipapp
+        MyApp
+
+    [zipapp]
+    recipe = koslab.recipe.zipapp
+    omelette-part = omelette
+    main-function = MyApp.main:main
+    output-file = MyApp.pyz
+
+zipapp file will be created everytime buildout is run
